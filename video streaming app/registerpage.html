@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(logimg.jpg) ;
+   background-size: cover;
+    
+  }
+ 
+
+  .register-container {
+    background-color: black;
+    padding: 3rem; /* Increased padding */
+    max-width: 500px; /* Increased max-width */
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); 
+    animation: slide-up 0.5s ease-in-out;
+  }
+
+  .register-header {
+    text-align: center;
+    margin-bottom: 2rem; /* Increased margin */
+  }
+
+  .register-title {
+    font-size: 2.5rem; /* Increased font size */
+    color: white;
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Increased gap */
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Increased gap */
+  }
+
+  .form-label {
+    font-size: 1.2rem; /* Increased font size */
+    color: white;
+  }
+
+  .form-input {
+    padding: 0.75rem; /* Increased padding */
+    border: 1px solid black;
+    border-radius: 8px; /* Increased border radius */
+    font-size: 1.2rem; /* Increased font size */
+  }
+
+  .form-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem; /* Increased padding */
+    font-size: 1.2rem; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .form-button:hover {
+    background-color: #333;
+  }
+
+  @media screen and (max-width: 768px) {
+    .register-container {
+      padding: 2rem;
+      max-width: 60%;
+      max-height: 80%;
+    }
+
+    .register-title {
+      font-size: 1.5rem;
+    }
+
+    .register-header {
+      margin-bottom: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+ 
+<div class="register-container">
+  <div class="register-header">
+    <h1 class="register-title">Register</h1>
+  </div>
+  <form class="register-form" action='register.php' method='POST'>
+    <div class="form-group">
+        <label class="form-label" for="Email">Email </label>
+        <input type="text" id="Email" name="Email" class="form-input" placeholder="Your Mail Id">
+
+        <label class="form-label" for="new-username">Username</label>
+        <input type="text" id="new-username" name="new-username" class="form-input" placeholder="Username">
+        <label class="form-label" for="new-password">Password</label>
+        <input type="password" id="new-password" name="new-password" class="form-input" placeholder="Password">
+
+        <button type="submit" class="form-button">Register</button>
+    </div>
+   
+</form>
+</div>
+</body>
+</html>

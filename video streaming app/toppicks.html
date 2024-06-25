@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #slideshow-container {
+            margin: 5%;
+            width: 90%;
+            max-width: 1000px;
+            height: auto;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: auto;
+        }
+
+        .slider {
+            margin: 40px;
+        }
+
+        .slider img {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .rec {
+            margin: 20px;
+        }
+
+        .rec1 {
+            text-align: left;
+        }
+
+        .heading {
+            position: absolute;
+            left: 50%;
+            top: 3px;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: white;
+        }
+
+        .rect {
+            margin: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .slider {
+                margin: 20px;
+            }
+
+            .rec {
+                margin: 10px;
+            }
+
+            .heading {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rec">
+        <div class="rec1">
+            <h4 class="heading">Top Of The Week</h4>
+        </div>
+    </div>
+
+    <div class="slider">
+        <div id="slideshow-container">
+            <img class="slide" src="missionimpossible.jpg" alt="pic 1">
+            <a href="strangerthings.html"><img class="slide" src="stranger things.jpg" alt="pic 2"></a>
+            <img class="slide" src="spiderman across the verse.jpg" alt="pic 3">
+        </div>
+    </div>
+    <h4 style="color: white;">Thriller</h4>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+</body>
+</html>

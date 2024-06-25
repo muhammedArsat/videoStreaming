@@ -1,0 +1,26 @@
+<!-- Input area -->
+<label for="Speech Recognition">Speech Recognition</label>
+<input type="text" name="" id="speechToText" placeholder="Speak Something" onclick="record()">
+
+<!-- Below is the script for voice recognition and conversion to text-->
+
+ <footer>
+   <p>&copy; 2023 StreamFlix. All rights reserved.</p>
+ </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+ function record() {
+     var recognition = new webkitSpeechRecognition();
+     recognition.lang = "en-GB";
+
+     recognition.onresult = function(event) {
+         // console.log(event);
+         document.getElementById('speechToText').value = event.results[0][0].transcript;
+     }
+     recognition.start();
+
+ }
+</script>s

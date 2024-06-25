@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix-style Landing Page</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    color: red;
+    font-weight: 500;
+  }
+
+  .nav {
+    list-style: none;
+    display: flex;
+  }
+
+  .nav-item {
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    padding: 5rem 1rem;
+
+background-repeat: no-repeat;
+object-fit: cover;
+    overflow: hidden;
+    
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid red;
+    background-color: red;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Center horizontally */
+    gap: 2rem;
+    padding: 3rem 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .feature-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .feature-image {
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 10px;
+  }
+
+  .feature-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-description {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      padding: 8rem 2rem;
+    }
+
+    .cta-buttons {
+      gap: 2rem;
+    }
+
+    .feature {
+      flex-direction: row; /* Change to row layout */
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-content {
+      padding-left: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .title {
+      font-size: 3rem;
+    }
+
+    .description {
+      font-size: 1.5rem;
+    }
+
+    .feature-title {
+      font-size: 1.8rem;
+    }
+
+    .feature-description {
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">STREAMFLIX</div>
+    <h1 class="title">Unlimited Entertainment</h1>
+    <p class="description">Experience a wide range of movies, TV shows, and more. Join us today and explore a world of endless entertainment.</p>
+    <div class="cta-buttons">
+      <a href="registerpage.html" class="btn">Join Now</a>
+      <a href="loginpage.php" class="btn">Sign In</a>
+    </div>
+  </div>
+
+  <div class="feature">
+    <img src="feature.jpg" alt="Feature 1" class="feature-image">
+    <div class="feature-content">
+      <h2 class="feature-title">Watch your favourite shows</h2>
+      <p class="feature-description">Discover exclusive content that you won't find anywhere else. Dive into your favorite shows and movies.</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <img src="phone.png" alt="Feature 2" class="feature-image">
+    <div class="feature-content">
+      <h2 class="feature-title">Enjoy your shows on any device</h2>
+      <h1 class="feature-description">Watch on any device, anytime, anywhere. Enjoy seamless streaming across all your devices.</h1>
+    </div>
+  </div>
+
+  <!-- Add more feature sections here -->
+
+</body>
+</html>

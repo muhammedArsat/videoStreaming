@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<!-- Coding by Multiwebpress-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <title> Responsive Navigation Bar | Multiwebpress </title>
+    <style>
+      *{
+    margin:0; padding:0;
+    color:#f2f5f7;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+body{
+  background-color: black;
+  overflow-x: hidden;
+}
+
+.image-grid-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.image-grid-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+nav{
+    height: 6rem;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color:black;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.2);
+}
+
+/* Styling Logo*/
+
+.logo{
+    padding: 3vh 3vw;
+    text-align: left;
+    width: 20vw;
+}
+
+.logo img{
+    height: auto;
+    width: 4rem;
+}
+
+/* Styling Navigation Links*/
+
+.nav-links{
+    width: 80vw;
+    display: flex;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+    list-style: none;
+    font-weight: 600;
+}
+
+.nav-links li a{
+    margin: 0 0.7vw;
+    text-decoration: none;
+    transition: all ease-in-out 350ms;
+    padding: 10px;
+}
+
+.nav-links li a:hover{
+    color:#000;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links li a:hover::before{
+    width: 80%;
+}
+
+
+
+
+.login-button{
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size:1rem;
+    cursor:pointer;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    border-radius: 2em;
+}
+
+.login-button:hover{
+    color:#fff;
+    background-color: #dd5f24;
+    border:1.5px solid #dd5f24;
+    transition: all ease-in-out 350ms;
+}
+
+
+
+.hamburger div{
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger{
+    display: none;
+}
+.newrelase{
+    margin: 20px;
+    color: white;
+    text-align:left;
+    font-size: 25px;
+    margin-left: 40px;
+    font-family:'Courier New', Courier, monospace;
+}
+.more{
+  width: 80vw;
+    position: absolute;
+    right: 0;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: right;
+  
+    list-style: none;
+  
+    font-size: 20px;
+    
+    font-family: 'Courier New', Courier, monospace;
+}
+.title{
+  color: white;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+ h3{
+    margin: 20px;
+    color: white;
+    text-align: right;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
+.slider {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#slideshow-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically on mobile */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    max-height: 400px; /* Adjust the max-height as needed */
+  
+    margin-bottom: 10px; /* Add some spacing between images */
+}
+.small-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 70px;
+        }
+
+        .row-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin:10px;
+            
+        }
+
+        .col-3 {
+            flex-basis: calc(25% - 20px); /* Four columns in each row */
+            margin: 5px;
+            text-align: center;
+            
+        }
+
+        .col-3 img {
+            width: 70%; /* Adjust the width as needed */
+            height: auto;
+            border-radius: 10px; /* Curved border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          
+        }
+
+        h4 {
+            color: white;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        p {
+            color: white;
+            font-size: 14px;
+        }
+
+
+.image-grid-container {
+    max-width: 100%; 
+    overflow-x:scroll; 
+    white-space: nowrap;
+    margin: 10px;
+}
+
+.image-grid {
+    display: inline-block; /* Display images in a row */
+    vertical-align: top;
+}
+
+.image {
+    width: 200px; /* Set the width of each image */
+    height: auto;
+    display: inline-block;
+    margin-right: 10px; /* Add spacing between images */
+}
+
+.image img {
+    width: 100%;
+    height: 200px;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#searchbar {
+  margin: 20px auto 10px; /* Updated margin: 20px top, auto right/left, 10px bottom */
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: black;
+    border-color: white;
+    border-style: solid;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    border: none;
+    outline: none; /* Remove the default focus outline */
+}
+
+.image {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+
+      .image:hover {
+        transform: scale(1.05);
+      }
+
+      .dets {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        transform: translateY(100%);
+        transition: transform 0.3s;
+      }
+
+      .image:hover .dets {
+        transform: translateY(0);
+      }
+
+      /* ... your existing styles ... */
+/* ... your existing styles ... */
+
+.dets button {
+      width: 100%;
+      margin-top: 5px;
+      font-size: 12px;
+      padding: 5px 10px;
+      color: white;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      text-align: left;
+      border-radius: 5px;
+      font-weight: 500;
+      opacity: .8;
+      transition: .2s;
+    }
+
+    .dets button a {
+      color: white;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .dets button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+/* ... your existing styles ... */
+
+
+
+
+
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        background: black;
+        position: fixed;
+        opacity: 1;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade{
+        opacity: 1;
+    }
+
+    /* Navigation Bar Icon on Click*/
+
+        .toggle .bars1{
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .bars2{
+            transition: all 0s ease;
+            width: 0;
+        }
+
+        .toggle .bars3{
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        .slide {
+        max-height: 200px; /* Adjust height for mobile view */
+    }
+    .pro {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .image {
+        width: 200px; /* Adjust image width for mobile */
+    }
+    .col-3 {
+                flex-basis: calc(50% - 20px); /* Two columns in each row for smaller screens */
+            }
+            .logo h2{
+        font-size: 14px;
+    }
+    .col-3 h4{
+        font-size: 14px;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+           <h2>Stream Flix</h2>
+        </div>
+        <div class="search-container">
+          <input id="searchbar" onkeyup="searchVideos()" type="text" name="search" placeholder="Search videos..">
+          </div>
+        <div class="hamburger">
+            <div class="bars1"></div>
+            <div class="bars2"></div>
+            <div class="bars3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Tv Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Web Series</a></li>
+            <li><a href="#">Recently Added</a></li>
+            <li><a href="#">Profile</a></li>
+          
+        </ul>
+    </nav>
+    <div class="newrelase">Top Of The Week</div>
+     
+    </div>
+    <div class="slider">
+      <div id="slideshow-container">
+          <img class="slide" style="filter: brightness(60%);" src="missionimpossible.jpg" alt="pic 1">
+          <a href="strangerthings.html"><img class="slide"style="filter: brightness(60%);"  src="stranger things.jpg" width="" alt="pic 2"></a>
+          <img class="slide"style="filter: brightness(60%);"  src="spiderman across the verse.jpg" alt="pic 3">
+      </div>
+  </div>
+ 
+  <div class="small-container">
+     <div class="newrelase"><b>Top Of The Week</b></div>
+    <div class="row-2">
+        <div class="col-3">
+            <a href="strangerthings.html"><img src="spider-verse_art_of_book_cover.jpg" width="200" height="300" ></a>
+          
+             <h4 style="color: white">Spiderman Across The verse</h4>
+            
+         </div>
+         <div class="col-3">
+         <img src="spider-verse_art_of_book_cover.jpg" height="60%" ></a>
+           <h4 style="color: white">Oppenheimer</h4>
+       </div>
+       <div class="col-3">
+       <img src="spider-verse_art_of_book_cover.jpg" width="200" height="300"></a>
+         <h4 style="color: white">Barbie</h4>
+         
+        
+     </div>
+     <div class="col-3">
+     <img src="spider-verse_art_of_book_cover.jpg" width="200" height="300"></a>
+       <h4 style="color: white">Rebel Moon</h4>
+       
+      
+   </div>
+   <div class="col-3">
+    <img src="spider-verse_art_of_book_cover.jpg"width="200" height="300" ></a>
+     <h4 style="color: white">Heart of Stone</h4>
+     
+    
+ </div>
+ <div class="col-3">
+ <img src="spider-verse_art_of_book_cover.jpg" width="200" height="300"></a>
+   <h4 style="color: white">Blue Beetle</h4>
+   
+  
+</div>
+<div class="col-3">
+  <img src="spider-verse_art_of_book_cover.jpg"width="200" height="300"></a>
+   <h4 style="color: white">No Hard Feelings</h4>
+   
+  
+</div>
+<div class="col-3">
+<img src="spider-verse_art_of_book_cover.jpg" width="200" height="300"></a>
+   <h4 style="color: white">My fault<h4>
+   
+   
+</div>
+    </div>
+</div>
+
+
+    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+const slideshowContainer = document.getElementById("slideshow-container");
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 3000);
+}
+function searchVideos() {
+    let input = document.getElementById('searchbar').value;
+    input = input.toLowerCase();
+    let videos = document.getElementsByClassName('col-3');
+    let slider = document.querySelector('.slider');
+    let newReleases = document.querySelectorAll('.newrelase');
+
+    // Hide the slideshow and new releases sections based on input presence
+    if (input.trim() === "") {
+        slider.style.display = 'block';
+        newReleases.forEach(release => release.style.display = 'block');
+    } else {
+        slider.style.display = 'none';
+        newReleases.forEach(release => release.style.display = 'none');
+    }
+
+    for (let i = 0; i < videos.length; i++) {
+        let videoTitle = videos[i].getElementsByTagName('h4')[0].innerText.toLowerCase();
+        if (videoTitle.includes(input)) {
+            videos[i].style.display = 'block';
+        } else {
+            videos[i].style.display = 'none';
+        }
+    }
+
+    // Reload the page if the input is cleared
+    if (input.trim() === "") {
+        location.reload();
+    }
+}
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+  const reloadButton = document.getElementById("reloadButton");
+
+  reloadButton.addEventListener("click", function() {
+    location.reload();
+  });
+});
+  const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Animation
+    hamburger.classList.toggle("toggle");
+});
+</script>
+</body>
+</html>
